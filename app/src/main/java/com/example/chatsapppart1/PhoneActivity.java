@@ -8,10 +8,14 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.chatsapppart1.databinding.ActivityPhoneBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class PhoneActivity extends AppCompatActivity {
     private  com.example.chatsapppart1.databinding.ActivityPhoneBinding binding;
 
+
+
+    FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +25,17 @@ public class PhoneActivity extends AppCompatActivity {
 
         // other way of the bind is like this
 //        setContentView(binding.getRoot());
+
+
+
+        // this step is used for checked if user login or not
+        auth = FirebaseAuth.getInstance();
+        if(auth.getCurrentUser() != null)
+        {
+            Intent intent = new Intent(PhoneActivity.this , MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
 
         binding.etPhPhone.requestFocus();

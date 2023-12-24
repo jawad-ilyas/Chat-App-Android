@@ -1,9 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.ChatsAppPart1" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.chatsAppTheme" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorSecondary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="toolbarStyle">@style/AppToolbarStyle</item>
+
     </style>
 
-    <style name="Theme.ChatsAppPart1" parent="Base.Theme.ChatsAppPart1" />
+    <style name="AppToolbarStyle" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/colorSecondary</item>
+    </style>
 </resources>
