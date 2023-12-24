@@ -6,24 +6,24 @@
     android:layout_height="match_parent"
     android:padding="5dp"
     android:paddingLeft="10dp"
-    tools:context=".PhoneActivity">
+    tools:context=".profileSetupLibrary">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profilePicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="45dp"
+        android:src="@drawable/avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mobile_auth" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvPmain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Verify Your Phone Number"
+        android:text="Profile Info"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/profilePicture"
@@ -36,12 +36,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="ChatsApp will Send an SMS to verify Your Phone Number"
+        android:text="Please set your name and an optional profile image"
         app:layout_constraintEnd_toEndOf="@+id/tvPmain"
         app:layout_constraintStart_toStartOf="@+id/tvPmain"
         app:layout_constraintTop_toBottomOf="@+id/tvPmain" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -59,13 +60,13 @@
             android:padding="16dp">
 
             <EditText
-                android:id="@+id/etPhPhone"
+                android:id="@+id/etUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/textbox_design_outline"
                 android:ems="10"
-                android:hint="Enter Your Phone Number"
+                android:hint="Enter Your Name Or UserName"
                 android:inputType="text"
                 android:padding="15dp"
                 android:paddingStart="10dp"
@@ -73,12 +74,25 @@
                 android:paddingBottom="10dp" />
 
             <Button
-                android:id="@+id/btnPhSubmit"
+                android:id="@+id/continueBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#25D366"
-                android:text="Button" />
+                android:text="Setup Profile" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/dataLoadingProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="218dp"
+        android:layout_height="167dp"
+        android:layout_marginBottom="43dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

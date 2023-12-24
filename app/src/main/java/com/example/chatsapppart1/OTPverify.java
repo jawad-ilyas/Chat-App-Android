@@ -37,6 +37,8 @@ public class OTPverify extends AppCompatActivity {
     String VerificationId;
 
 
+
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,6 +114,10 @@ public class OTPverify extends AppCompatActivity {
                             // You can get the authenticated user
 //                            FirebaseUser user = task.getResult().getUser();
                             Toast.makeText(OTPverify.this, "Verify ", Toast.LENGTH_SHORT).show();
+
+                            intent = new Intent(getApplicationContext(), profileSetupLibrary.class);
+                            startActivity(intent);
+                                finishAffinity();
 
                             // Proceed with the authenticated user
                             // For example, you can navigate to another activity
